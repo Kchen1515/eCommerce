@@ -4,7 +4,7 @@ import Hero from './Hero.jsx'
 
 const Main = () => {
   return (
-    <div className="hero-container">
+    <div>
       <Navbar/>
       <Hero/>
     </div>
