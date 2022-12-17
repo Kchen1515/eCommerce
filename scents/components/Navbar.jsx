@@ -13,7 +13,7 @@ const Navbar = () => {
     <div className='navbar-container'>
       <nav className="navbar">
         <div className="website-name">
-          <span>Scents By Maria</span>
+          <span className="logo-span">SCENTS BY MARIA</span>
         </div>
           <ul className={listIsActive ? "navbar-list list-is-active" : "navbar-list"}>
             <li>

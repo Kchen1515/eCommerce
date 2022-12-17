@@ -1,4 +1,11 @@
 import React from 'react';
+import Image from 'next/image'
+import heroCandle from '../assets/imgs/heroCandle.png'
+import candle from '../assets/imgs/candle.png'
+
+
+import Link from 'next/Link'
+
 
 const Hero = () => {
   return (
@@ -8,8 +15,11 @@ const Hero = () => {
         <div className="hero-slogan-container">
           <span className="hero-slogan"> Specialty candles made just for you! Bubble candle starter kit.</span>
         </div>
-        <button className="hero-shop-btn"> Shop Now</button>
+        <Link href="/product/ID">
+          <button className="hero-shop-btn"> Shop Now</button>
+        </Link>
       </div>
+      <Image src={candle} alt="white candle" className="hero-image"></Image>
      </div>
     </div>
   )

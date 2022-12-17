@@ -1,19 +1,25 @@
 import React from 'react';
-import '../styles/Home.module.css'
-
-
-
+import  {client}  from '../lib/client.js'
 
 // Importing COMPONENTS //
-import Main from './components/Main.jsx'
-import Hero from './components/Hero.jsx'
+import { Main } from '../components/index.js'
 
-const Home = () => {
+const Home = ({products}) => {
+
   return (
     <div className="body">
-      <Main/>
+      <Main products={products}/>
     </div>
   )
+}
+
+export const getServerSideProps = async () => {
+  const query = `*[_type == "product"]`
+  const products = await client.fetch(query)
+
+  return {
+    props: {products}
+  }
 }
 
 export default Home
