@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Navbar, Hero, ProductList} from './index.js'
-
+import { Navbar, Hero, ProductList, Footer} from './index.js'
+import Form from './Form.jsx'
 const Main = ({products}) => {
   return (
     <div>
-      <Navbar/>
       <Hero/>
       <ProductList products={products} />
+      <Form/>
     </div>
   )
 }

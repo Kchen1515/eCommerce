@@ -4,7 +4,7 @@ import {Product} from './index.js'
 const ProductList = ({products}) => {
   return (
     <div className="productlist-ctn">
-      <div>
+      <div className="product-ctn">
         <h2>Products</h2>
         {
           products.map((product, i) => {

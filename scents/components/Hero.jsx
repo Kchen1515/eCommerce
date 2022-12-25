@@ -4,7 +4,7 @@ import heroCandle from '../assets/imgs/heroCandle.png'
 import candle from '../assets/imgs/candle.png'
 
 
-import Link from 'next/Link'
+import Link from 'next/link'
 
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="hero-slogan-container">
           <span className="hero-slogan"> Specialty candles made just for you! Bubble candle starter kit.</span>
         </div>
-        <Link href="/product/ID">
+        <Link href='#'>
           <button className="hero-shop-btn"> Shop Now</button>
         </Link>
       </div>

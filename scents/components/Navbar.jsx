@@ -1,5 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import Link from 'next/link'
+
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import {Cart} from './index.js'
+
+import {useStateContext} from '../context/StateContext.js'
+
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false)
@@ -9,25 +16,30 @@ const Navbar = () => {
     setIsActive(!isActive)
     setListIsActive(!listIsActive)
   }
+  const {setShowCart, showCart, totalQty} =  useStateContext();
+
   return (
     <div className='navbar-container'>
       <nav className="navbar">
         <div className="website-name">
-          <span className="logo-span">SCENTS BY MARIA</span>
+          <Link href="/" className="logo-link">
+            <span className="logo-span">SCENTS BY MARIA</span>
+          </Link>
         </div>
           <ul className={listIsActive ? "navbar-list list-is-active" : "navbar-list"}>
-            <li>
-              <a href='#'><span>Home</span></a>
-            </li>
-            <li>
-              <a href="#"><span>Shop</span></a>
-            </li>
+           <Link href='/'>Home</Link>
+           <Link href="#">SHOP</Link>
           </ul>
+          <button onClick={() => setShowCart(true)}>
+            <AiOutlineShoppingCart />
+            <span>{totalQty}</span>
+          </button>
         <button className={ isActive ? "hamburger-menu is-active" : "hamburger-menu"} onClick={toggleHamburger}>
           <span></span>
           <span></span>
           <span></span>
         </button>
+        { showCart && <Cart /> }
       </nav>
     </div>
   )
